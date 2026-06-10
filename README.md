@@ -70,6 +70,19 @@ npm run build
 
 No database, login, or backend WiFi storage is required.
 
+## Deploy to Cloudflare Pages
+
+This MVP is configured as a static Next.js export, so Cloudflare Pages can serve it without a Worker adapter.
+
+Recommended Cloudflare Pages settings:
+
+- Framework preset: None
+- Build command: `npm run build`
+- Build output directory: `out`
+- Node.js version: `22`
+
+Do not use a Wrangler deploy command for this static MVP. The build produces the `out` folder and Cloudflare Pages publishes that folder directly.
+
 ## Privacy
 
 Your WiFi name and password are processed locally in the browser. GuestWiFiQR does not upload or store WiFi SSIDs, passwords, or generated signs in the MVP.
